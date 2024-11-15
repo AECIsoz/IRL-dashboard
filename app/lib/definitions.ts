@@ -31,6 +31,12 @@ export type Revenue = {
   revenue: number;
 };
 
+export type Scale = {
+  id: number;
+  name: string;
+  currentLevel: number;
+};
+
 export type LatestInvoice = {
   id: string;
   name: string;
@@ -86,3 +92,4 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+

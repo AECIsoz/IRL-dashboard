@@ -1,6 +1,6 @@
 // import bcrypt from 'bcrypt';
 // import { db } from '@vercel/postgres';
-// import { invoices, customers, revenue, users } from '../lib/placeholder-data';
+// import { invoices, customers, revenue, users, scales } from '../lib/placeholder-data';
 
 // const client = await db.connect();
 
@@ -99,6 +99,27 @@
 //   );
 
 //   return insertedRevenue;
+// } 
+
+// async function seedScales() {
+//   await client.sql`
+//     CREATE TABLE IF NOT EXISTS scales (
+//       id INT NOT NULL UNIQUE, name VARCHAR(255) NOT NULL,
+//       currentLevel INT NOT NULL
+//     );
+//   `;
+  
+//   const insertedScales = await Promise.all(
+//     revenue.map(
+//       (scale) => client.sql`
+//         INSERT INTO scales (id, name, currentLevel)
+//         VALUES (${scale.id}, ${scale.name}, ${scale.currentLevel})
+//         ON CONFLICT (id) DO NOTHING;
+//       `,
+//     ),
+//   );
+  
+//   return insertedScales;
 // }
 
 export async function GET() {
@@ -112,6 +133,7 @@ export async function GET() {
   //   await seedCustomers();
   //   await seedInvoices();
   //   await seedRevenue();
+  //   await seedScales();
   //   await client.sql`COMMIT`;
 
   //   return Response.json({ message: 'Database seeded successfully' });

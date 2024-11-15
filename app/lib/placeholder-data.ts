@@ -144,4 +144,16 @@ const revenue = [
   { month: 'Dec', revenue: 4800 },
 ];
 
-export { users, customers, invoices, revenue };
+const scales = [
+  {id: 1, name: "customer readiness level", currentLevel: 2 },
+  {id: 2, name: "technology readiness level", currentLevel: 3 },
+  {id: 3, name: "business model readiness level", currentLevel: 2 },
+  {id: 4, name: "ipr readiness level", currentLevel: 1 },
+  {id: 5, name: "team readiness level", currentLevel: 4 },
+  {id: 6, name: "funding readiness level", currentLevel: 3 },
+];
+
+
+export { users, customers, invoices, revenue, scales };
+
+
